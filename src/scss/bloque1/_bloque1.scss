@@ -1,0 +1,235 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// .bloque1 {
+//   position: relative;
+//   height: 100vh;
+//   width: 100%;
+//   overflow: hidden;
+//   img {
+//       top: 0;
+//       width: 100vw;
+//       height: 100vh;
+//       position: absolute;
+//       background-size: contain;
+//   }
+// }
+
+// .bloque1Left {
+//   // background-color: purple;
+//   position: absolute;
+//   top: 2rem;
+//   width: 100%;
+//   padding: 0 3rem;
+//   display: flex;
+//   flex-direction: column;
+//   row-gap: 2.5rem;
+//   @include m.phone_360 {
+//       top: 4rem;
+//   }
+//   @include m.desktop_1020 {
+//       row-gap: 3.5rem;
+//       padding: 0 6rem;
+//   }
+//   .bloque1LeftLogo {
+//       position: block;
+//       width: 15rem;
+//       height: auto;
+//       // left: 2rem;
+//       @include m.desktop_1020 {
+//           display: none;  
+//       }
+//   }
+
+//   .bloque1LeftTitle {
+//       margin-top: 7rem;
+//       display: flex;
+//       flex-direction: column;
+//       row-gap: .3rem;
+//       color: black;
+//       @include m.desktop_1020 {
+//           margin-top: 4rem;
+//       }
+//       h3, h2 {
+//           margin: 0;
+//           font-weight: 600;
+//       }
+//       h3 {
+//           font-size: 1.3rem;
+//           @include m.desktop_1020 {
+//               font-size: 2rem;
+//           }
+//       }
+//       h2 {
+//           font-size: 2.4rem;
+//           width: 25rem;
+//           font-weight: 800;
+//           @include m.desktop_1020 {
+//               width: 35rem;
+//               font-size: 3.5rem;
+//           }
+//       }
+//   }
+//   .bloque1LeftSubtitle {
+//       color: black;
+//       display: flex;
+//       flex-direction: column;
+//       row-gap: .3rem;
+//       position: relative;
+//       img {
+//           position: absolute;
+//           width: 2rem;
+//           height: auto;
+//           left: -.4rem;
+//           z-index: 2;
+//           top: -.4rem;
+//           @include m.desktop_1020 {
+//               width: 3rem;
+//               top: -1rem;
+//               left: -1rem;
+//           }
+//       }
+//       h3, h4 {
+//           margin: 0;
+//           font-weight: 600;
+//           font-size: 1.4rem;
+//           position: relative;
+//           z-index: 5;
+//           @include m.desktop_1020 {
+//               font-size: 1.8rem;
+//           }
+//       }
+//       h4 {
+//           font-size: 2rem;
+//           font-weight: 800;
+//           @include m.desktop_1020 {
+//               font-size: 2.5rem;
+//           }
+//       }
+//   }
+// }
+
+
+.bloque1 {
+    // background-color: red;
+    height: 100vh;
+    display: flex;
+    // align-items: center;
+    background-color: v.$color1;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    .bloque1Container {
+        // background-color: purple;
+        height: auto;
+        width: v.$width;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 0;
+        row-gap: 3rem;
+        @include m.phone_360 {
+            row-gap: 5rem;
+        }
+        @include m.desktop_1020 {
+            flex-direction: row;
+            width: 85rem;
+            padding: 5rem 0;
+            column-gap: 4rem;
+        }
+        @include m.desktop_1200 {
+            width: 100rem;   
+            column-gap: 10rem; 
+        }
+        @include m.desktop_1400 {
+            width: 120rem;
+        }
+    }
+}
+
+.bloque1Image {
+    position: absolute;
+    height: 100vh !important;
+    width: auto;
+    right: 0;
+}
+
+.bloque1Left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3rem;
+    @include m.phone_360 {
+        row-gap: 12rem;
+    }
+    @include m.desktop_1020 {
+        height: 100%;
+        align-items: flex-start;
+    }
+    @include m.desktop_1200 {
+        row-gap: 23rem;
+    }
+    @include m.desktop_1400 {
+        row-gap: 27rem;    
+    }
+    img {     
+        width: 15rem;
+        @include m.phone_375 {
+            width: 17rem;    
+        }
+        @include m.desktop_1020 {
+            width: 20rem;
+        }
+    }
+    .bloque1LeftTitle {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        @include m.desktop_1020 {
+            row-gap: 2rem;
+        }
+        h3, p {
+            color: black;
+            margin: 0;
+            font-size: 2rem;
+            text-align: center;
+            @include m.phone_375 {
+                font-size: 2.5rem;
+            }
+            @include m.desktop_1020 {
+                font-size: 3.5rem;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+            @include m.phone_375 {
+                font-size: 1.7rem;
+            }
+            @include m.desktop_1020 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.bloque1Right {
+    img {
+        width: 20rem;
+        @include m.phone_360 {
+            width: 100%;
+        }
+        @include m.desktop_1020 {
+            width: 35rem;
+            position: relative;
+            z-index: 10;
+        }
+    }
+}
+
+.bloque1Left,
+.bloque1Right {
+    @include m.desktop_1020 {
+        width: 50%;
+    }
+}
